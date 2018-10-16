@@ -15,7 +15,7 @@ struct studentdetail
 
 int main()
 {
-    int i, k, d = 1, summationscore, summationage, malecount=0, femalecount=0;
+    int i, k, summationscore, summationage, malecount=0, femalecount=0;
     double avrgscore, avrgage;
 
     studentdetail student[5];
@@ -58,13 +58,25 @@ int main()
     avrgscore = summationscore/5;
     avrgage = summationage/5;
 
+    ofstream outf(" student.txt "); //CREATE A .TXT FILE CALLED STUDENT
+outf<< "   Id Number    "   <<   "   Name   "   <<  "   Age   "   <<  "   Gender    "   <<   "   Score    "   <<    "   Grade    "<<endl;
+outf<< "   **********************************************************************************************************************"<<endl;
+     for (k = 0; k < 5; k++)
+    outf << k << " .  " << "   " << "   " << student[k].studID << "     " << student[k].studName << "     " << "   " <<student[k].age << "    " << "   " << student[k].gender <<"    "<<"   "<<student[k].score <<"       "<<"   "<<student[i].grade<< "     "<<endl<<endl<<endl;
+outf<< "       **************************************************************************"<<endl;
+
 
     cout << "Number of males: " << malecount << endl;
     cout << "Number of females: " << femalecount << endl;
     cout << "Average score: " << avrgscore << endl;
     cout << "Average age: " << avrgage << endl;
 
-    cout << "Student ID" << " " << "Name" << " " << "Age" << " " << "Gender" << " " << "Score" << " " << "Grade" << endl;
-    cout << student[i].studID << " " << student[i].studName << " " << student[i].age << " " << student[i].gender << " " << student[i].score << " " << student[i].grade << endl;
+    //cout << "Student ID" << " " << "Name" << " " << "Age" << " " << "Gender" << " " << "Score" << " " << "Grade" << endl;
+    //cout << student[i].studID << " " << student[i].studName << " " << student[i].age << " " << student[i].gender << " " << student[i].score << " " << student[i].grade << endl;
    return 0;
 }
+
+
+
+
+
